@@ -1,0 +1,52 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "type": "object",
+    "properties": {
+      "action_name":       { "type": "string" },
+      "purpose":           { "type": "string" },
+      "author":            { "type": "string" },
+      "inputs": {
+        "type": "object",
+        "additionalProperties": {
+          "type": "object",
+          "properties": {
+            "required":    { "type": "boolean" },
+            "default":     { "type": ["string","null"] },
+            "description": { "type": "string" }
+          },
+          "required": ["required","description"]
+        }
+      },
+      "outputs": {
+        "type": "object",
+        "additionalProperties": {
+          "type": "object",
+          "properties": {
+            "description": { "type": "string" },
+            "value_from":  { "type": "string" }
+          },
+          "required": ["description","value_from"]
+        }
+      },
+      "runs": {
+        "type": "object",
+        "properties": {
+          "using": { "type": "string" },
+          "steps": {
+            "type": "array",
+            "items": { "type": "object" }
+          }
+        },
+        "required": ["using","steps"]
+      },
+      "branding": {
+        "type": "object",
+        "properties": {
+          "color": { "type": "string" },
+          "icon":  { "type": "string" }
+        },
+        "required": ["color","icon"]
+      }
+    },
+    "required": ["action_name","purpose","author","inputs","outputs","runs","branding"]
+}
