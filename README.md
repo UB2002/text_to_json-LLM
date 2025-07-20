@@ -1,4 +1,4 @@
-# Text-to-Structured JSON Extractor using Gemma 2 (9B) + Gradio
+# Text-to-Structured JSON Extractor using Gemma 2 
 
 This project uses Google's **Gemma-2 9B Instruction-Tuned** model to convert **unstructured text** into **structured JSON output** based on a defined `schema.json`. It includes an interactive Gradio interface for rapid testing.
 
